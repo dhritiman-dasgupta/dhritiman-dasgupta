@@ -35,14 +35,20 @@ Recurring themes:
 
 ### Selected work
 
-| Project | What it is |
+**[opusfleet](https://github.com/dhritiman-dasgupta/opusfleet)** — a Kafka-backed ingest pipeline
+for Opus/RTP audio coming off a fleet of devices: frames land on the wire, get segmented into Ogg
+Opus and written to S3/MinIO, with a live WebSocket monitor over the top. The expensive stage
+scales separately from the socket layer, and segments are re-muxed rather than re-encoded, so
+what reaches object storage is bit-identical to what the microphone captured.
+
+| | |
 |---|---|
-| **[opusfleet](https://github.com/dhritiman-dasgupta/opusfleet)** | Kafka-backed ingest for Opus/RTP audio from device fleets, with a 500-device simulator. Measured at 25k frames/s with zero drops. |
-| **[jetson-avatar-studio](https://github.com/dhritiman-dasgupta/jetson-avatar-studio)** | On-device talking avatar for a Jetson Orin Nano — cloned voice TTS, STT, LLM and hotword, all local. |
-| **[overhead-scanner](https://github.com/dhritiman-dasgupta/overhead-scanner)** | Browser app for an overhead document camera: capture, deskew, clean up, OCR, searchable PDF. No uploads, no build step. |
-| **[overhead-scanner-py](https://github.com/dhritiman-dasgupta/overhead-scanner-py)** | The desktop counterpart — full-resolution 16 MP capture, auto page detection, perspective correction. |
-| **[hey-kiki-wakeword-web](https://github.com/dhritiman-dasgupta/hey-kiki-wakeword-web)** | A trained openWakeWord ONNX model running fully client-side with onnxruntime-web and the mic. |
-| **[ECG-ANALYSIS](https://github.com/dhritiman-dasgupta/ECG-ANALYSIS)** | ECG acquisition and analysis, including a 12-lead conversion API and the IoT device that feeds it. |
+| **25,000 frames/s** | sustained (500 × 50), 0 dropped, 0 reconnects |
+| **28 MB/h** | Ogg Opus at 64 kbps, against 345 MB/h for 48 kHz WAV |
+| **0 consumer lag** | segmenter and live stages, throughout the run |
+
+Measured against a Docker Compose stack on a 4 vCPU / 8 GB VM, driven by 500 *simulated* devices —
+they speak the real wire format, but they are not physical hardware.
 
 ### Toolbox
 

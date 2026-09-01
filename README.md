@@ -35,20 +35,12 @@ Recurring themes:
 
 ### Selected work
 
-**[opusfleet](https://github.com/dhritiman-dasgupta/opusfleet)** — a Kafka-backed ingest pipeline
-for Opus/RTP audio coming off a fleet of devices: frames land on the wire, get segmented into Ogg
-Opus and written to S3/MinIO, with a live WebSocket monitor over the top. The expensive stage
-scales separately from the socket layer, and segments are re-muxed rather than re-encoded, so
-what reaches object storage is bit-identical to what the microphone captured.
-
-| | |
+| Project | What it is |
 |---|---|
-| **25,000 frames/s** | sustained (500 × 50), 0 dropped, 0 reconnects |
-| **28 MB/h** | Ogg Opus at 64 kbps, against 345 MB/h for 48 kHz WAV |
-| **0 consumer lag** | segmenter and live stages, throughout the run |
-
-Measured against a Docker Compose stack on a 4 vCPU / 8 GB VM, driven by 500 *simulated* devices —
-they speak the real wire format, but they are not physical hardware.
+| **[slo-gated-delivery](https://github.com/dhritiman-dasgupta/slo-gated-delivery)** | A Kubernetes delivery platform where a bad release rolls itself back. The canary is gated on Prometheus error-budget queries rather than on someone clicking *approve*, and the substrate is modular Terraform. Fault injection at 8% returned 181 × 200 / 19 × 500, emitting exactly the series the AnalysisTemplate queries. |
+| **[opusfleet](https://github.com/dhritiman-dasgupta/opusfleet)** | Kafka-backed ingest for Opus/RTP audio from device fleets. 25,000 frames/s sustained (500 × 50) with 0 dropped frames and 0 reconnects, against a *simulated* fleet speaking the real wire format. Segments are re-muxed, not re-encoded — 28 MB/h against 345 MB/h for WAV. |
+| **[virtual-tryon](https://github.com/dhritiman-dasgupta/virtual-tryon)** | A FastAPI service wrapping FLUX.2 klein 9B and fal's virtual-try-on LoRA on ComfyUI, plus the batch pipeline and QA harness. 172 generations in 26.9 min on one RTX 4090, mean 9.4 s, seed pinned so results differ only by their inputs. |
+| **[hey-kiki-wakeword-web](https://github.com/dhritiman-dasgupta/hey-kiki-wakeword-web)** | A trained openWakeWord ONNX model running fully client-side with onnxruntime-web and the microphone — no server, no upload, no build step. [Try it live](https://dhritiman-dasgupta.github.io/hey-kiki-wakeword-web/). |
 
 ### Toolbox
 

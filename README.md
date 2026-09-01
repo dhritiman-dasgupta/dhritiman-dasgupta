@@ -5,6 +5,12 @@
 </p>
 
 <p align="center">
+  <a href="https://www.linkedin.com/in/dhritiman-dasgupta-27aa55243"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white"></a>
+  <a href="https://www.instagram.com/dhritiman.dasgupta"><img alt="Instagram" src="https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white"></a>
+  <a href="https://dhritiman-dasgupta.github.io"><img alt="Website" src="https://img.shields.io/badge/dhritiman--dasgupta.github.io-24292F?logo=githubpages&logoColor=white"></a>
+</p>
+
+<p align="center">
   <img alt="Embedded" src="https://img.shields.io/badge/embedded-ESP32%20%C2%B7%20nRF%20%C2%B7%20Jetson-0E9488">
   <img alt="Edge AI" src="https://img.shields.io/badge/edge%20AI-on--device%20STT%2FTTS-7A34F5">
   <img alt="Backend" src="https://img.shields.io/badge/backend-Kafka%20%C2%B7%20Docker%20%C2%B7%20AWS-E8730B">
@@ -62,5 +68,7 @@ Recurring themes:
 
 <p align="center">
   <a href="https://github.com/dhritiman-dasgupta?tab=repositories">Repositories</a> ·
-  <a href="https://dhritiman-dasgupta.github.io">dhritiman-dasgupta.github.io</a>
+  <a href="https://dhritiman-dasgupta.github.io">dhritiman-dasgupta.github.io</a> ·
+  <a href="https://www.linkedin.com/in/dhritiman-dasgupta-27aa55243">LinkedIn</a> ·
+  <a href="https://www.instagram.com/dhritiman.dasgupta">Instagram</a>
 </p>
